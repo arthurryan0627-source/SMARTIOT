@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details - GreenTech</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      color: #333;
+    }
+
+    header.navbar {
+      background: linear-gradient(90deg, #00b894, #00cec9);
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      height: 50px;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .details {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    /* 🌿 Equal-size top material images with names */
+    .top-materials {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .material-card {
+      text-align: center;
+    }
+
+    .material-card img {
+      width: 280px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      border: 3px solid #00b894;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .material-card img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .material-card p {
+      margin-top: 8px;
+      font-weight: 600;
+      color: #00695c;
+    }
+
+    /* 🌱 Product versions */
+    .versions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .version {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      width: 320px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .version:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .version img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* 🌾 Product Summary Boxes */
+    .summary {
+      background: #ffffff;
+      border-left: 5px solid #00b894;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin: 25px auto;
+      padding: 20px 25px;
+      max-width: 800px;
+      text-align: left;
+      border-radius: 12px;
+    }
+
+    .summary h3 {
+      color: #00b894;
+      margin-bottom: 10px;
+    }
+
+    .summary p {
+      line-height: 1.6;
+      color: #333;
+    }
+
+    footer {
+      background: #00b894;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-container">
+      <a href="index.html"><img src="images/logo.jpg" alt="GreenTech Logo" class="logo"></a>
+      <h1>IoT Irrigation Kits</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="order.html">Order</a>
+    </nav>
+  </header>
+
+  <section class="details">
+    <h2>🌿 Smart IoT Irrigation System</h2>
+    <div class="summary">
+      <h3>Overall Product Summary</h3>
+      <p>The Smart IoT Irrigation System are smart farming systems that combine cutting-edge IoT sensors, automation, and solar power to revolutionize modern agriculture. Designed to optimize water use and improve productivity, these kits — Basic, Standard, and Advanced — cater to different levels of automation and control, helping farmers achieve sustainability, efficiency, and convenience with minimal manual work.</p>
+    </div>
+
+    <!-- 🌿 3 Equal-size Material Photos with Names -->
+    <div class="top-materials">
+      <div class="material-card">
+        <img src="images/material1.jpg" alt="Moisture Sensor">
+        <p>Moisture Sensor</p>
+      </div>
+      <div class="material-card">
+        <img src="images/material2.jpg" alt="Water Pipes">
+        <p>High-Pressure PVC Pipes</p>
+      </div>
+      <div class="material-card">
+        <img src="images/material3.jpg" alt="Solar Power System">
+        <p>IoT Farm App</p>
+      </div>
+    </div>
+
+    <!-- 🌱 3 Product Versions -->
+    <div class="versions">
+      <div class="version">
+        <h4>Basic Kit</h4>
+        <img src="images/basic.jpeg" alt="Basic Kit" />
+        <p>The Basic Home Kit is designed for small gardens and first-time users. It offers smart soil moisture monitoring and manual irrigation control through a mobile alert system. Built with durable PVC pipes, an ESP32 microcontroller, and a low-energy water pump, it helps conserve water efficiently while providing real-time soil data.</p>
+        <div class="summary">
+          <h3>Basic Kit Summary</h3>
+          <p>Simple and affordable IoT irrigation for beginners — perfect for home gardeners who want smart alerts and manual control in one compact system.</p>
+        </div>
+      </div>
+
+      <div class="version">
+        <h4>Standard Kit</h4>
+        <img src="images/standard.webp" alt="Standard Kit" />
+        <p>The Standard Farm Kit includes automatic pump control based on soil and water-level sensors. It maintains balanced soil hydration, operates on solar energy, and can be monitored remotely. Ideal for medium-sized farms or nurseries, this kit brings reliable automation and low maintenance costs.</p>
+        <div class="summary">
+          <h3>Standard Kit Summary</h3>
+          <p>Automated irrigation with real-time water and soil monitoring — a sustainable solution for medium-scale farms seeking reliable and efficient performance.</p>
+        </div>
+      </div>
+
+      <div class="version">
+        <h4>Advanced Kit</h4>
+        <img src="images/advance.jpg" alt="Advanced Kit" />
+        <p>The Advanced Farm Kit is a fully automated IoT irrigation solution for professional farming. It features real-time analytics, mobile app control, and AI-based water optimization. Built with high-performance sensors, solar modules, and a cloud-connected ESP32 system, it ensures precision watering and maximum yield.</p>
+        <div class="summary">
+          <h3>Advanced Kit Summary</h3>
+          <p>Fully automated IoT irrigation with cloud monitoring, app control, and AI optimization — the ultimate solution for large-scale, data-driven smart farming.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 IoT Irrigation Kits | Smart Agriculture Solutions</p>
+  </footer>
+</body>
+</html>

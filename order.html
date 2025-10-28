@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order - GreenTech IoT Irrigation</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(90deg, #00b894, #00cec9);
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      height: 45px;
+      width: auto;
+      border-radius: 10px;
+    }
+
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 60px 20px;
+    }
+
+    .product-card, .order-summary {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      max-width: 420px;
+      flex: 1;
+      min-width: 320px;
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .product-card h2 {
+      color: #00b894;
+    }
+
+    .price {
+      font-size: 1.3em;
+      color: #e53935;
+      font-weight: 600;
+    }
+
+    select, input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 2px solid #00b894;
+      margin-top: 8px;
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-align: center;
+      background: #00b894;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 8px;
+      border: none;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      margin: 10px 5px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #019874;
+    }
+
+    .order-summary h3 {
+      color: #00b894;
+      margin-bottom: 20px;
+    }
+
+    .summary-item {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+    }
+
+    footer {
+      background: #00b894;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+<header class="navbar">
+    <div class="logo-container">
+      <a href="index.html"><img src="images/logo.jpg" alt="GreenTech Logo" class="logo"></a>
+      <h1>IoT Irrigation Kits</h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="product-card">
+      <img src="images/product.jpg" alt="IoT Irrigation Product" />
+      <h2>IoT Smart Irrigation Kit</h2>
+      <p class="price" id="displayPrice">RM 3999.00</p>
+
+      <label for="variant">Select Package:</label>
+      <select id="variant">
+        <option value="Basic">Basic - RM 3,999</option>
+        <option value="Standard">Standard - RM 9,999</option>
+        <option value="Advance">Advance - RM 15,999</option>
+      </select>
+
+      <label for="qty">Quantity:</label>
+      <input type="number" id="qty" min="1" value="1" />
+
+      <div>
+        <button class="btn" onclick="addToBasket()">Add to Basket</button>
+        <button class="btn" onclick="buyNow()">Buy Now</button>
+      </div>
+    </section>
+
+    <section class="order-summary">
+      <h3>Order Summary</h3>
+      <div class="summary-item"><span>Product:</span><span id="sumProduct">IoT Smart Irrigation Kit</span></div>
+      <div class="summary-item"><span>Variant:</span><span id="sumVariant">Basic</span></div>
+      <div class="summary-item"><span>Price:</span><span id="sumPrice">RM 3,999.00</span></div>
+      <div class="summary-item"><span>Quantity:</span><span id="sumQty">1</span></div>
+      <div class="summary-item"><span>Subtotal:</span><span id="sumTotal">RM 3999.00</span></div>
+      <div class="summary-item"><span>Payment:</span><span>FPX</span></div>
+
+      <button class="btn" onclick="proceedToPayment()">Proceed to Payment</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 IoT Irrigation Kits | Smart Agriculture Solutions</p>
+  </footer>
+
+  <script>
+    const prices = {
+      "Basic": 3999,
+      "Standard": 9999,
+      "Advance": 15999
+    };
+
+    function updateSummary() {
+      const variant = document.getElementById("variant").value;
+      const qty = parseInt(document.getElementById("qty").value);
+      const price = prices[variant];
+      const total = price * qty;
+
+      document.getElementById("sumVariant").innerText = variant;
+      document.getElementById("sumPrice").innerText = `RM ${price.toFixed(2)}`;
+      document.getElementById("sumQty").innerText = qty;
+      document.getElementById("sumTotal").innerText = `RM ${total.toFixed(2)}`;
+      document.getElementById("displayPrice").innerText = `RM ${price.toFixed(2)}`;
+    }
+
+    document.getElementById("variant").addEventListener("change", updateSummary);
+    document.getElementById("qty").addEventListener("input", updateSummary);
+
+    function addToBasket() {
+      alert("✅ Item added to basket!");
+    }
+
+    function buyNow() {
+      updateSummary();
+      alert("🛒 Redirecting to secure payment gateway...");
+    }
+
+    function proceedToPayment() {
+      updateSummary();
+      alert("💳 Payment process starting...");
+    }
+  </script>
+</body>
+</html>
